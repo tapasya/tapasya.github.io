@@ -63,3 +63,23 @@ function initMap() {
           map: map
         });
       }
+
+var isShowingChatIcon = true;
+
+function onChatButtonClicked(){
+  if( isShowingChatIcon){
+    document.getElementById('chat-container').style.display = "block";                    
+    document.getElementById("chat-container").className = document.getElementById("chat-container").className.replace(new RegExp('(?:^|\\s)'+ 'ease-out' + '(?:\\s|$)'), ' ')
+    document.getElementById('chat-container').className += " ease-in";    
+    document.getElementById("chat-button-icons").className = document.getElementById("chat-button-icons").className.replace(new RegExp('(?:^|\\s)'+ 'glyphicon-comment' + '(?:\\s|$)'), ' ')
+    document.getElementById('chat-button-icons').className += "glyphicon-remove";   
+    isShowingChatIcon = false
+  }else{
+    document.getElementById('chat-container').style.display = "none";           
+    document.getElementById("chat-container").className = document.getElementById("chat-container").className.replace(new RegExp('(?:^|\\s)'+ 'ease-in' + '(?:\\s|$)'), ' ')
+    document.getElementById('chat-container').className += " ease-out";   
+    document.getElementById("chat-button-icons").className = document.getElementById("chat-button-icons").className.replace(new RegExp('(?:^|\\s)'+ 'glyphicon-remove' + '(?:\\s|$)'), ' ')
+    document.getElementById('chat-button-icons').className += "glyphicon-comment"; 
+    isShowingChatIcon = true ;
+  }
+}

@@ -804,3 +804,105 @@ header h1 {
             transform: translateY(-15px);
   }
 }
+
+.chat-wrapper{
+ z-index: 100000; display: none;      
+ width: auto;      
+ height: auto;     
+ max-width: 600px;           
+ bottom: 80px;            
+ right: 10px;            
+ position: fixed;         
+} 
+
+@-webkit-keyframes fadeinout {      
+  0% { opacity: 0; }     
+  100% { opacity: 1; }    
+}   
+
+@keyframes fadeinout {      
+  0% { opacity: 0; }      
+  100% { opacity: 1; }    
+}   
+
+.ease-in{     
+  -webkit-animation: fadeinout 300ms linear forwards;     
+  animation: fadeinout 300ms linear forwards;   
+}   
+
+.ease-out{      
+  -webkit-animation: fadeinout 300ms linear forwards;     
+  animation: fadeinout 300ms linear forwards;   
+}     
+
+#chat-window-frame{   
+  z-index:100000;   
+  -webkit-box-shadow: 9px 7px 45px -2px rgba(158,144,158,0.51);     
+  -moz-box-shadow: 9px 7px 45px -2px rgba(158,144,158,0.51);      
+  box-shadow: 9px 7px 45px -2px rgba(158,144,158,0.51);     
+  border: 0;      
+  border-radius: 5px;   
+}   
+
+.chat-wrapper button{     float:right;    }        
+
+.chat {  
+  cursor:pointer;          
+  position: fixed;            
+  bottom: 10px;            
+  right: 10px;           
+  color: white;    
+  #width: 100px;          
+  height: 100px;         
+}       
+
+.btn:focus,.btn:active,.btn:hover {           
+  outline: none !important;           
+  color: #ffffff;        
+}
+
+.btn-circle {          
+  width: 30px;          
+  height: 30px;          
+  text-align: center;          
+  padding: 6px 0;          
+  font-size: 12px;          
+  line-height: 1.428571429;          
+  border-radius: 15px;        
+}        
+
+.btn-circle.btn-lg {          
+  width: 50px;          
+  height: 50px;          
+  padding: 10px 16px;          
+  font-size: 18px;          
+  line-height: 1.33;          
+  border-radius: 25px;        
+}        
+
+.btn-circle.btn-xl {          
+  width: 70px;          
+  height: 70px;          
+  padding: 10px 16px;          
+  font-size: 24px;          
+  line-height: 1.33;          
+  border-radius: 35px;        
+}
+
+
+.chat-button {            
+  position: fixed;            
+  bottom: 10px;            
+  right: 10px;            
+  box-shadow: 0px 2px 5px #666;            
+  background-color: #2b313f;            
+  border-color: white; 
+  z-index:100000;           
+  color: white;        
+} 
+
+
+
+
+
+
