@@ -401,7 +401,44 @@
     <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 </script> -->
-
+ <script>
+      function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera; // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+          return "Windows Phone";
+        }
+        if (/android/i.test(userAgent)) {
+          return "Android";
+        } // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+        }
+        return "unknown";
+      }
+      const url = window.location.href;
+      if (localStorage.getItem("noredirect")) {
+        //nothing
+      } else {
+        if (url.indexOf("lang") < 0) {
+          if (getMobileOperatingSystem() == "Android") {
+            const url =
+              "intent://8years.narendramodi.in/#Intent;scheme=https;package=com.narendramodiapp;end";
+            window.location.replace(url);
+          } else if (getMobileOperatingSystem() == "iOS") {
+            
+            window.location.replace(
+              "com.namo.narendramodiapp://send?url=https://8years.narendramodi.in"
+            );
+          }
+          setTimeout(() => {
+            window.location.href = "http://nm-4.com/dnldapp";
+          }, 5000);
+        } else {
+          //noredirect, for webview
+          localStorage.setItem("noredirect", 1);
+        }
+      }
+    </script>
 <script type="text/javascript" src="js/script.js"></script>
 
 <!-- 		<iframe height="430" width="350" src="https://bot.dialogflow.com/7799bb14-d014-4c9e-817f-7ff088db76dd"></iframe>
