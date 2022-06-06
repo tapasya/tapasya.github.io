@@ -24,45 +24,7 @@
 
 </head>
 <body>
-	
-	<script>
-      function getMobileOperatingSystem() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera; // Windows Phone must come first because its UA also contains "Android"
-        if (/windows phone/i.test(userAgent)) {
-          return "Windows Phone";
-        }
-        if (/android/i.test(userAgent)) {
-          return "Android";
-        } // iOS detection from: http://stackoverflow.com/a/9039885/177710
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          return "iOS";
-        }
-        return "unknown";
-      }
-      const url = window.location.href;
-      if (localStorage.getItem("noredirect")) {
-        //nothing
-      } else {
-        if (url.indexOf("lang") < 0) {
-          if (getMobileOperatingSystem() == "Android") {
-            const url =
-              "intent://8years.narendramodi.in/#Intent;scheme=https;package=com.narendramodiapp;end";
-            window.location.replace(url);
-          } else if (getMobileOperatingSystem() == "iOS") {
-            
-            window.location.replace(
-              "com.namo.narendramodiapp://send?url=https://8years.narendramodi.in"
-            );
-          }
-          setTimeout(() => {
-            window.location.href = "http://nm-4.com/dnldapp";
-          }, 5000);
-        } else {
-          //noredirect, for webview
-          localStorage.setItem("noredirect", 1);
-        }
-      }
-    </script>
+
 
 	<section class="section intro">
 		<div class="intro-content">
